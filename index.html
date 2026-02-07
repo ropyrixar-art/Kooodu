@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Rose Day</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: #ffe6e6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .active {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        color: #b30000;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        position: relative;
+    }
+
+    button {
+        padding: 12px 28px;
+        font-size: 1.1em;
+        margin: 10px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #yes {
+        background-color: #ff4d4d;
+        color: white;
+    }
+
+    #no {
+        background-color: white;
+        color: #ff4d4d;
+        border: 2px solid #ff4d4d;
+        position: absolute;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Page 1 -->
+<div id="page1" class="page active">
+    <h1>Happy Rose Day 🌹</h1>
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+</div>
+
+<!-- Page 2 -->
+<div id="page2" class="page">
+    <h1>Thank You Barsa❤️</h1>
+</div>
+
+<script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const page1 = document.getElementById("page1");
+    const page2 = document.getElementById("page2");
+
+    yesBtn.addEventListener("click", () => {
+        page1.classList.remove("active");
+        page2.classList.add("active");
+    });
+
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+</script>
+
+</body>
+</html>
